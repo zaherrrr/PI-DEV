@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginC">
+   <children>
+      <AnchorPane layoutY="88.0" prefHeight="94.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2daafc,#f2faff);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="pageNamelabel" alignment="CENTER" contentDisplay="CENTER" layoutX="251.0" layoutY="27.0" prefHeight="41.0" prefWidth="99.0" style="-fx-background-color: black;" textAlignment="CENTER" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font name="Impact" size="29.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.21904761904761905">
+                     <stops>
+                        <Stop color="#2daafc" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <AnchorPane fx:id="signupPane" prefHeight="450.0" prefWidth="600.0" AnchorPane.bottomAnchor="-1.0">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" layoutX="32.0" layoutY="101.0" prefHeight="433.0" prefWidth="511.0" spacing="25.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="24.0" prefWidth="151.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#uploadPicSignUp" prefHeight="24.0" prefWidth="172.0" textAlignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="UPLOAD" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="nameAdd" promptText="nameAdd" />
+                        <TextField fx:id="lastnameAdd" promptText="Lastname" />
+                        <TextField fx:id="emailAdd" promptText="Email" />
+                        <PasswordField fx:id="passwordAdd" promptText="Password" />
+                        <ComboBox prefWidth="150.0" promptText="SELECT ROLE" visibleRowCount="3" />
+                        <Label fx:id="errorLabel1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#signup" text="Sign up">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#cancelSignup" text="Cancel">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="47.0" layoutY="109.0" prefHeight="237.0" prefWidth="123.0" spacing="36.0">
+                     <children>
+                        <Label layoutX="58.0" layoutY="225.0" text="Picture :">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="First name:">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="Lastname :">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="27.0" text="E-mail :">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="44.0" text="Password :">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Role :">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="signUpImage" fitHeight="120.0" fitWidth="131.0" layoutX="443.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loginPane" layoutY="94.0" prefHeight="357.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="94.0">
+         <children>
+            <Button layoutX="248.0" layoutY="301.0" mnemonicParsing="false" text="Reset Password">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="251.0" layoutY="274.0" text="Forgot password ? " />
+            <HBox layoutX="105.0" layoutY="79.0" prefHeight="85.0" prefWidth="363.0" AnchorPane.bottomAnchor="193.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="79.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="81.0" prefWidth="107.0">
+                     <children>
+                        <Label text="USER EMAIL :">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="25.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="PASSWORD :">
+                           <font>
+                              <Font name="Impact" size="11.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="25.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="116.0" prefWidth="201.0">
+                     <children>
+                        <TextField fx:id="lineEditEmail" promptText="Example@example.tn">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <PasswordField fx:id="lineEditPwd" promptText="Password">
+                           <VBox.margin>
+                              <Insets bottom="12.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="277.0" layoutY="166.0" mnemonicParsing="false" onAction="#login" text="Login">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="273.0" layoutY="209.0" mnemonicParsing="false" onAction="#gotosignup" text="Signup">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="errorLabel" layoutX="468.0" layoutY="113.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
