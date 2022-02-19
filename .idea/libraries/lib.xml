@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WeEatTunisian/lib/controlsfx-8.40.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WeEatTunisian/lib/AnimateFX-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
