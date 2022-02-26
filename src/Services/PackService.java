@@ -12,8 +12,8 @@ public class PackService {
     private static final String GET_PACK_DATA = "SELECT * from plate where id = ? ";
     private static final String INSERT_QUERY = "insert into plate (id_category,id_chef,description,name,image,price) values (?,?,?,?,?,?)";
     private static final String SELECT_QUERY = "SELECT * FROM pack";
-    private static final String UPDATE_PACK= "UPDATE pack SET price = ? ,description=? , name = ?  where id= ?   ";
-    private static final String DELETE_PLATE ="DELETE FROM pack WHERE ID = ? ";
+    private static final String UPDATE_PACK = "UPDATE pack SET price = ? ,description=? , name = ?  where id= ?   ";
+    private static final String DELETE_PLATE = "DELETE FROM pack WHERE ID = ? ";
 
     public boolean insertPlate(Plate pc) {
         try {
@@ -36,16 +36,16 @@ public class PackService {
             return false;
         }
     }
-    public static List<Pack> readPack()
-    {
-        List<Pack> mylist= new ArrayList() ;
-        Pack pc =new Pack();
+
+    public static List<Pack> readPack() {
+        List<Pack> mylist = new ArrayList();
+        Pack pc = new Pack();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
-            st=cnx.createStatement();
-            ResultSet res=st.executeQuery(SELECT_QUERY);
-            while (res.next()){
+            st = cnx.createStatement();
+            ResultSet res = st.executeQuery(SELECT_QUERY);
+            while (res.next()) {
                 pc.setId(res.getInt("id"));
                 pc.setDescription(res.getString("description"));
                 pc.setName(res.getString("name"));
@@ -58,6 +58,7 @@ public class PackService {
         System.out.print(mylist);
         return mylist;
     }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -73,24 +74,24 @@ public class PackService {
             }
         }
     }
-    public static boolean deletePack(int id)  {
-        try{
+
+    public static boolean deletePack(int id) {
+        try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(DELETE_PLATE);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-            System.out.println("Pack number "+id+" has been deleted !");
+            System.out.println("Pack number " + id + " has been deleted !");
             return true;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-            return false ;
+            return false;
         }
 
     }
-    public static boolean updatePack(Pack pack){
+
+    public static boolean updatePack(Pack pack) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(UPDATE_PACK);
@@ -107,7 +108,8 @@ public class PackService {
             return false;
         }
     }
-    public static Pack packInfo(int id ){
+
+    public static Pack packInfo(int id) {
         Pack pack = new Pack();
         try {
             Connection cnx = DataSource.getInstance().getCnx();

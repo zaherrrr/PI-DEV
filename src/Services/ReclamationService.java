@@ -1,6 +1,5 @@
 package Services;
 
-import Entity.Plate;
 import Entity.Reclamation;
 import Entity.Users;
 import Util.DataSource;
@@ -16,7 +15,7 @@ public class ReclamationService {
     private static final String SELECT_QUERY_USER = "SELECT * FROM reclamation where id_client = ?";
     private static final String UPDATE_RECLAMATION_USER = "UPDATE RECLAMATION SET description = ?  where id= ?   ";
     private static final String UPDATE_RECLAMATION_ADMIN = "UPDATE RECLAMATION SET RESPOND = ? , id_admin=? ,status= ?  where id= ?   ";
-    private static final String DELETE_RECLAMATION ="DELETE FROM RECLAMATION WHERE ID = ? ";
+    private static final String DELETE_RECLAMATION = "DELETE FROM RECLAMATION WHERE ID = ? ";
 
     public boolean insertReclamation(Reclamation rc) {
         try {
@@ -34,10 +33,10 @@ public class ReclamationService {
             return false;
         }
     }
-    public static List<Reclamation> readReclamationUser(Users u)
-    {
-        List<Reclamation> mylist= new ArrayList() ;
-        Reclamation rc =new Reclamation();
+
+    public static List<Reclamation> readReclamationUser(Users u) {
+        List<Reclamation> mylist = new ArrayList();
+        Reclamation rc = new Reclamation();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
@@ -51,10 +50,9 @@ public class ReclamationService {
                 rc.setRespond((rs.getString("respond")));
                 rc.setId_admin((rs.getInt("id_admin")));
                 rc.setReclamationdate(rs.getDate("reclamationdate"));
-                if(rs.getInt("status") == 0 ){
+                if (rs.getInt("status") == 0) {
                     rc.setStatus(false);
-                }
-                else {
+                } else {
                     rc.setStatus(true);
                 }
                 mylist.add(rc);
@@ -65,10 +63,10 @@ public class ReclamationService {
         System.out.print(mylist);
         return mylist;
     }
-     public static List<Reclamation> readReclamationAdmin()
-    {
-        List<Reclamation> mylist= new ArrayList() ;
-        Reclamation rc =new Reclamation();
+
+    public static List<Reclamation> readReclamationAdmin() {
+        List<Reclamation> mylist = new ArrayList();
+        Reclamation rc = new Reclamation();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
@@ -81,10 +79,9 @@ public class ReclamationService {
                 rc.setRespond((rs.getString("respond")));
                 rc.setId_admin((rs.getInt("id_admin")));
                 rc.setReclamationdate(rs.getDate("reclamationdate"));
-                if(rs.getInt("status") == 0 ){
+                if (rs.getInt("status") == 0) {
                     rc.setStatus(false);
-                }
-                else {
+                } else {
                     rc.setStatus(true);
                 }
                 mylist.add(rc);
@@ -95,6 +92,7 @@ public class ReclamationService {
         System.out.print(mylist);
         return mylist;
     }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -110,24 +108,24 @@ public class ReclamationService {
             }
         }
     }
-    public static boolean deleteReclamation(int id)  {
-        try{
+
+    public static boolean deleteReclamation(int id) {
+        try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(DELETE_RECLAMATION);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-            System.out.println("RECLAMATION number "+id+" has been deleted !");
+            System.out.println("RECLAMATION number " + id + " has been deleted !");
             return true;
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             System.err.println("Got an exception!");
             printSQLException(e);
-            return false ;
+            return false;
         }
 
     }
-    public static boolean updateReclamationUser(Reclamation rc){
+
+    public static boolean updateReclamationUser(Reclamation rc) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(UPDATE_RECLAMATION_USER);
@@ -142,13 +140,14 @@ public class ReclamationService {
             return false;
         }
     }
-    public static boolean updateReclamationAdmin(Reclamation rc){
+
+    public static boolean updateReclamationAdmin(Reclamation rc) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(UPDATE_RECLAMATION_ADMIN);
             preparedStmt.setString(1, rc.getRespond());
             preparedStmt.setInt(2, rc.getId_admin());
-            preparedStmt.setInt(3,1 );
+            preparedStmt.setInt(3, 1);
             preparedStmt.executeUpdate();
             preparedStmt.close();
             System.out.println("Reclamation Responded");
@@ -158,7 +157,8 @@ public class ReclamationService {
             return false;
         }
     }
-    public static Reclamation reclamationInfo(int id){
+
+    public static Reclamation reclamationInfo(int id) {
         Reclamation rc = new Reclamation();
         try {
             Connection cnx = DataSource.getInstance().getCnx();
@@ -173,10 +173,9 @@ public class ReclamationService {
                 rc.setReclamationdate(rs.getDate("reclamationdate"));
                 rc.setRespond(rs.getString("respond"));
                 rc.setId_admin(rs.getInt("id_admin"));
-                if(rs.getInt("status") == 0 ){
+                if (rs.getInt("status") == 0) {
                     rc.setStatus(false);
-                }
-                else {
+                } else {
                     rc.setStatus(true);
                 }
             }

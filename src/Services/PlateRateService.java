@@ -1,8 +1,6 @@
 package Services;
 
-import Entity.Plate;
 import Entity.PlateRate;
-import Entity.Reclamation;
 import Entity.Users;
 import Util.DataSource;
 
@@ -16,8 +14,8 @@ public class PlateRateService {
     private static final String SELECT_QUERY = "SELECT * FROM platerate";
     private static final String SELECT_QUERY_USER = "SELECT * FROM platerate WHERE id_user=? ";
     private static final String SELECT_AVG_PLATE_RATE = "SELECT AVG(stars) from plate_rate";
-    private static final String UPDATE_PLATE_RATE= "UPDATE platerate SET stars = ?  where id= ?   ";
-    private static final String DELETE_PLATE_RATE ="DELETE FROM platerate WHERE ID = ? ";
+    private static final String UPDATE_PLATE_RATE = "UPDATE platerate SET stars = ?  where id= ?   ";
+    private static final String DELETE_PLATE_RATE = "DELETE FROM platerate WHERE ID = ? ";
 
     public boolean insertPlateRate(PlateRate pr) {
         try {
@@ -36,16 +34,16 @@ public class PlateRateService {
             return false;
         }
     }
-    public static List<PlateRate> readPlateRate()
-    {
-        List<PlateRate> mylist= new ArrayList() ;
-        PlateRate pr =new PlateRate();
+
+    public static List<PlateRate> readPlateRate() {
+        List<PlateRate> mylist = new ArrayList();
+        PlateRate pr = new PlateRate();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
-            st=cnx.createStatement();
-            ResultSet res=st.executeQuery(SELECT_QUERY);
-            while (res.next()){
+            st = cnx.createStatement();
+            ResultSet res = st.executeQuery(SELECT_QUERY);
+            while (res.next()) {
                 pr.setId(res.getInt("id"));
                 pr.setId_plate(res.getInt("id_plate"));
                 pr.setStars(res.getInt("stars"));
@@ -60,16 +58,16 @@ public class PlateRateService {
         System.out.print(mylist);
         return mylist;
     }
-    public static float PlateRateAVG()
-    {
-       float AVGSTARS = 0 ;
+
+    public static float PlateRateAVG() {
+        float AVGSTARS = 0;
 
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
-            st=cnx.createStatement();
-            ResultSet res=st.executeQuery(SELECT_AVG_PLATE_RATE);
-            while (res.next()){
+            st = cnx.createStatement();
+            ResultSet res = st.executeQuery(SELECT_AVG_PLATE_RATE);
+            while (res.next()) {
                 AVGSTARS = res.getFloat(1);
             }
             return AVGSTARS;
@@ -79,6 +77,7 @@ public class PlateRateService {
 
         return AVGSTARS;
     }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -94,24 +93,24 @@ public class PlateRateService {
             }
         }
     }
-    public static boolean deletePlateRate(int id)  {
-        try{
+
+    public static boolean deletePlateRate(int id) {
+        try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(DELETE_PLATE_RATE);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-            System.out.println("PlateRate number "+id+" has been deleted !");
+            System.out.println("PlateRate number " + id + " has been deleted !");
             return true;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-            return false ;
+            return false;
         }
 
     }
-    public static boolean updatePlateRate(PlateRate pr){
+
+    public static boolean updatePlateRate(PlateRate pr) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(UPDATE_PLATE_RATE);
@@ -126,7 +125,8 @@ public class PlateRateService {
             return false;
         }
     }
-    public static PlateRate plateRateInfo(int id ){
+
+    public static PlateRate plateRateInfo(int id) {
         PlateRate pr = new PlateRate();
         try {
             Connection cnx = DataSource.getInstance().getCnx();
@@ -149,10 +149,10 @@ public class PlateRateService {
             return pr;
         }
     }
-    public static List<PlateRate> readPlateRates(Users u)
-    {
-        List<PlateRate> mylist= new ArrayList() ;
-        PlateRate pr =new PlateRate();
+
+    public static List<PlateRate> readPlateRates(Users u) {
+        List<PlateRate> mylist = new ArrayList();
+        PlateRate pr = new PlateRate();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();

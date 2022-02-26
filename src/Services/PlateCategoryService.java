@@ -1,12 +1,7 @@
 package Services;
 
-import Entity.Plate;
 import Entity.PlateCategory;
-import Entity.Users;
 import Util.DataSource;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.chart.PieChart;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,7 +12,7 @@ public class PlateCategoryService {
     private static final String INSERT_QUERY = "insert into PLATECATEGORY (NAME,DESCRIPTION) values (?,?)";
     private static final String SELECT_QUERY = "SELECT * FROM PLATECATEGORY";
     private static final String UPDATE_CATEGORY = "UPDATE PLATECATEGORY SET NAME = ? , description = ? where id= ?   ";
-    private static final String DELETE_CATEGORY ="DELETE FROM PLATECATEGORY WHERE ID = ? ";
+    private static final String DELETE_CATEGORY = "DELETE FROM PLATECATEGORY WHERE ID = ? ";
 
     public boolean insertPlateCategory(PlateCategory pc) {
         try {
@@ -35,16 +30,16 @@ public class PlateCategoryService {
             return false;
         }
     }
-    public static List<PlateCategory> readPlateCategory()
-    {
-        List<PlateCategory> mylist= new ArrayList() ;
-        PlateCategory pc =new PlateCategory();
+
+    public static List<PlateCategory> readPlateCategory() {
+        List<PlateCategory> mylist = new ArrayList();
+        PlateCategory pc = new PlateCategory();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
-            st=cnx.createStatement();
-            ResultSet res=st.executeQuery(SELECT_QUERY);
-            while (res.next()){
+            st = cnx.createStatement();
+            ResultSet res = st.executeQuery(SELECT_QUERY);
+            while (res.next()) {
                 pc.setId(res.getInt("id"));
                 pc.setName(res.getString("name"));
                 pc.setDescription(res.getString("description"));
@@ -57,6 +52,7 @@ public class PlateCategoryService {
         System.out.print(mylist);
         return mylist;
     }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -72,24 +68,24 @@ public class PlateCategoryService {
             }
         }
     }
-    public static boolean deleteCategoryplate(int id)  {
-        try{
+
+    public static boolean deleteCategoryplate(int id) {
+        try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(DELETE_CATEGORY);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-            System.out.println("Cat number "+id+" has been deleted !");
+            System.out.println("Cat number " + id + " has been deleted !");
             return true;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-            return false ;
+            return false;
         }
 
     }
-    public static boolean updatePlateCategory(PlateCategory pc){
+
+    public static boolean updatePlateCategory(PlateCategory pc) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             ResultSet rs;
@@ -106,7 +102,8 @@ public class PlateCategoryService {
             return false;
         }
     }
-    public static PlateCategory plateInfo(int id ){
+
+    public static PlateCategory plateInfo(int id) {
         PlateCategory pc = new PlateCategory();
         try {
             Connection cnx = DataSource.getInstance().getCnx();
@@ -115,10 +112,10 @@ public class PlateCategoryService {
             preparedStmt.setInt(1, id);
             rs = preparedStmt.executeQuery();
             while (rs.next()) {
-                    pc.setId(id);
-                    pc.setName(rs.getString("name"));
-                    pc.setDescription(rs.getString("description"));
-                    pc.setNumberofplates(rs.getInt("numberofplates"));
+                pc.setId(id);
+                pc.setName(rs.getString("name"));
+                pc.setDescription(rs.getString("description"));
+                pc.setNumberofplates(rs.getInt("numberofplates"));
             }
 
 

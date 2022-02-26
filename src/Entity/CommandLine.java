@@ -20,9 +20,8 @@ public class CommandLine {
         this.id_command = id_command;
     }
 
-    public CommandLine(int quantity, int total, int id_plate, int id_client, int id_command) {
+    public CommandLine(int quantity, int id_plate, int id_client, int id_command) {
         this.quantity = quantity;
-        this.total = total;
         this.id_plate = id_plate;
         this.id_client = id_client;
         this.id_command = id_command;

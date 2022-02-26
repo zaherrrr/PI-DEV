@@ -56,27 +56,27 @@ public class InterfaceAdmin implements Initializable {
     }
 
     private void selectBtn(Button b) {
+        enableBtns();
         b.setDisable(true);
     }
 
     @FXML
     public void homePage() {
         pageLabel.setText("Welcome Home Mr " + UserSession.getName());
-        enableBtns();
         selectBtn(homeBtn);
+        usersPagebtn.setDisable(true);
+
     }
 
     @FXML
     void productPage(ActionEvent event) {
         pageLabel.setText("Products Management");
-        enableBtns();
         selectBtn(productsPagebtn);
     }
 
     @FXML
     void profilePage(ActionEvent event) {
         pageLabel.setText("Profile Management");
-        enableBtns();
         selectBtn(profileBtn);
         try {
             fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Views/UserProfile.fxml")));
@@ -90,8 +90,9 @@ public class InterfaceAdmin implements Initializable {
     @FXML
     void usersPage(ActionEvent event) {
         pageLabel.setText("Users Management");
-        enableBtns();
+
         selectBtn(usersPagebtn);
+        homeBtn.setDisable(true);
         try {
             fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Views/Users_Management.fxml")));
         } catch (IOException e) {
@@ -104,7 +105,6 @@ public class InterfaceAdmin implements Initializable {
     @FXML
     void categoryPage(ActionEvent event) {
         pageLabel.setText("Category Management");
-        enableBtns();
         selectBtn(categoryPagebtn);
     }
 
@@ -117,7 +117,7 @@ public class InterfaceAdmin implements Initializable {
         alert.setContentText("Do you want to logout " + UserSession.getName() + " ? ");
         if (alert.showAndWait().get() == ButtonType.OK) {
             stage = (Stage) adminPane.getScene().getWindow();
-            System.out.println("You logged out " + UserSession.getName());
+            System.out.println("You logged out Mr admin " + UserSession.getName());
             UserSession.cleanUserSession();
             stage.close();
         }

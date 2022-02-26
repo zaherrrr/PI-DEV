@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class PlateRate {
     private int id;
-    private int id_plate ;
+    private int id_plate;
     private int id_user;
     private int stars;
     private Date daterate;

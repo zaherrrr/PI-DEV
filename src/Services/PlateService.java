@@ -12,7 +12,7 @@ public class PlateService {
     private static final String INSERT_QUERY = "insert into plate (id_category,id_chef,description,name,image,price) values (?,?,?,?,?,?)";
     private static final String SELECT_QUERY = "SELECT * FROM plate";
     private static final String UPDATE_PLATE = "UPDATE plate SET id_category = ? ,description=? , name = ? ,image = ?, price = ?  where id= ?   ";
-    private static final String DELETE_PLATE ="DELETE FROM plate WHERE ID = ? ";
+    private static final String DELETE_PLATE = "DELETE FROM plate WHERE ID = ? ";
 
     public boolean insertPlate(Plate pc) {
         try {
@@ -35,16 +35,16 @@ public class PlateService {
             return false;
         }
     }
-    public static List<Plate> readPlate()
-    {
-        List<Plate> mylist= new ArrayList() ;
-        Plate pc =new Plate();
+
+    public static List<Plate> readPlate() {
+        List<Plate> mylist = new ArrayList();
+        Plate pc = new Plate();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
-            st=cnx.createStatement();
-            ResultSet res=st.executeQuery(SELECT_QUERY);
-            while (res.next()){
+            st = cnx.createStatement();
+            ResultSet res = st.executeQuery(SELECT_QUERY);
+            while (res.next()) {
                 pc.setId(res.getInt("id"));
                 pc.setId_category(res.getInt("id_category"));
                 pc.setId_chef(res.getInt("id_chef"));
@@ -61,6 +61,7 @@ public class PlateService {
         System.out.print(mylist);
         return mylist;
     }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -76,24 +77,24 @@ public class PlateService {
             }
         }
     }
-    public static boolean deletePlate(int id)  {
-        try{
+
+    public static boolean deletePlate(int id) {
+        try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(DELETE_PLATE);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-            System.out.println("Plate number "+id+" has been deleted !");
+            System.out.println("Plate number " + id + " has been deleted !");
             return true;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-            return false ;
+            return false;
         }
 
     }
-    public static boolean updatePlate(Plate pc){
+
+    public static boolean updatePlate(Plate pc) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(UPDATE_PLATE);
@@ -112,7 +113,8 @@ public class PlateService {
             return false;
         }
     }
-    public static Plate plateInfo(int id ){
+
+    public static Plate plateInfo(int id) {
         Plate plate = new Plate();
         try {
             Connection cnx = DataSource.getInstance().getCnx();

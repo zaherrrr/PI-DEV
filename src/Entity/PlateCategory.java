@@ -24,14 +24,14 @@ public class PlateCategory {
     public PlateCategory() {
     }
 
-    public PlateCategory(int id, String name, String description,int numberofplates) {
+    public PlateCategory(int id, String name, String description, int numberofplates) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.numberofplates = numberofplates;
     }
 
-    public PlateCategory(String name, String description,int numberofplates) {
+    public PlateCategory(String name, String description, int numberofplates) {
         this.name = name;
         this.description = description;
         this.numberofplates = numberofplates;

@@ -12,17 +12,19 @@ public class DataSource {
     private final String USERNAME = "root";
     private final String PWD = "";
 
-    private DataSource(){
+    private DataSource() {
         try {
             cnx = DriverManager.getConnection(URL, USERNAME, PWD);
             System.out.println("Connection established...");
-        }catch (SQLException ex ) {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
+
     public static DataSource getInstance() {
-        if (instance == null)
-        {   instance = new DataSource(); }
+        if (instance == null) {
+            instance = new DataSource();
+        }
         return instance;
     }
 

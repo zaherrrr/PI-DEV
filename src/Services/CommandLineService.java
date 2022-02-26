@@ -1,7 +1,6 @@
 package Services;
 
 import Entity.CommandLine;
-import Entity.Reclamation;
 import Entity.Users;
 import Util.DataSource;
 
@@ -14,7 +13,7 @@ public class CommandLineService {
     private static final String INSERT_QUERY = "insert into commandline (id_client,id_plate,quantity,total) values (?,?,?,((SELECT price FROM plate where plate.id=?)*quantity))";
     private static final String SELECT_QUERY_USER = "SELECT * FROM commandline where id_client = ?";
     private static final String UPDATE_COMMAND_LINE_USER = "UPDATE COMMANDLINE SET QUANTITY = ?, total = ((SELECT price FROM plate where plate.id=?)*quantity)  where id= ?   ";
-    private static final String DELETE_COMMAND_LINE ="DELETE FROM Commandline WHERE ID = ? ";
+    private static final String DELETE_COMMAND_LINE = "DELETE FROM Commandline WHERE ID = ? ";
 
     public boolean insertReclamation(CommandLine cl) {
         try {
@@ -34,10 +33,9 @@ public class CommandLineService {
         }
     }
 
-    public static List<CommandLine> readcommndlineUser(Users u)
-    {
-        List<CommandLine> mylist= new ArrayList() ;
-        CommandLine rc =new CommandLine();
+    public static List<CommandLine> readcommndlineUser(Users u) {
+        List<CommandLine> mylist = new ArrayList();
+        CommandLine rc = new CommandLine();
         Statement st;
         try {
             Connection cnx = DataSource.getInstance().getCnx();
@@ -76,24 +74,24 @@ public class CommandLineService {
             }
         }
     }
-    public static boolean deleteCommandline(int id)  {
-        try{
+
+    public static boolean deleteCommandline(int id) {
+        try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(DELETE_COMMAND_LINE);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-            System.out.println("CommandLine number "+id+" has been deleted !");
+            System.out.println("CommandLine number " + id + " has been deleted !");
             return true;
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             System.err.println("Got an exception!");
             printSQLException(e);
-            return false ;
+            return false;
         }
 
     }
-    public static boolean updateCommandline(CommandLine rc){
+
+    public static boolean updateCommandline(CommandLine rc) {
         try {
             Connection cnx = DataSource.getInstance().getCnx();
             PreparedStatement preparedStmt = cnx.prepareStatement(UPDATE_COMMAND_LINE_USER);
@@ -110,7 +108,7 @@ public class CommandLineService {
         }
     }
 
-    public static CommandLine commandLineInfo(int id){
+    public static CommandLine commandLineInfo(int id) {
         CommandLine rc = new CommandLine();
         try {
             Connection cnx = DataSource.getInstance().getCnx();

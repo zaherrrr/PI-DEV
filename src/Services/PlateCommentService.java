@@ -1,6 +1,7 @@
 package Services;
 
-import Entity.*;
+import Entity.Plate;
+import Entity.PlateComment;
 import Util.DataSource;
 
 import java.sql.*;
@@ -113,6 +114,7 @@ public class PlateCommentService {
             return pc;
         }
     }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {

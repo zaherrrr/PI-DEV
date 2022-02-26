@@ -1,5 +1,7 @@
 package Entity;
 
+import java.sql.Timestamp;
+
 public class Users {
     private int id;
     private String name;
@@ -9,6 +11,15 @@ public class Users {
     private String role;
     private String profilePicture;
 
+    public Timestamp getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(Timestamp joinDate) {
+        this.joinDate = joinDate;
+    }
+
+    private Timestamp joinDate;
 
 
     public Users() {

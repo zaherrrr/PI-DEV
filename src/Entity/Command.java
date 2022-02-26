@@ -8,9 +8,10 @@ public class Command {
     private Double total;
     private Date datecommand;
 
-    public Command(){
+    public Command() {
 
     }
+
     public Command(int id, int id_client, Double total, Date datecommand) {
         this.id = id;
         this.id_client = id_client;

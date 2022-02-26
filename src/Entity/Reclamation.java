@@ -14,23 +14,23 @@ public class Reclamation {
     public Reclamation() {
     }
 
-    public Reclamation(int id, int id_client, String description, String respond, int id_admin, boolean status,Date date) {
+    public Reclamation(int id, int id_client, String description, String respond, int id_admin, boolean status, Date date) {
         this.id = id;
         this.id_client = id_client;
         this.description = description;
         this.respond = respond;
         this.id_admin = id_admin;
         this.status = status;
-        this.reclamationdate=date;
+        this.reclamationdate = date;
     }
 
-    public Reclamation(int id_client, String description, String respond, int id_admin, boolean status,Date date) {
+    public Reclamation(int id_client, String description, String respond, int id_admin, boolean status, Date date) {
         this.id_client = id_client;
         this.description = description;
         this.respond = respond;
         this.id_admin = id_admin;
         this.status = status;
-        this.reclamationdate= date;
+        this.reclamationdate = date;
     }
 
     public int getId() {
@@ -80,6 +80,7 @@ public class Reclamation {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
     public Date getReclamationdate() {
         return reclamationdate;
     }
