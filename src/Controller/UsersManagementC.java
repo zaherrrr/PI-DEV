@@ -106,6 +106,13 @@ public class UsersManagementC implements Initializable {
                             caption.setText("");
                         }
                     });
+            data.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED,
+                    new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent e) {
+                            caption.setText(data.toString());
+                        }
+                    });
 
 
         }

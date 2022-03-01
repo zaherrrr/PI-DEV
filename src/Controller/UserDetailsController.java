@@ -4,10 +4,13 @@ import Entity.Users;
 import Interfaces.MyListener;
 import Services.UserService;
 import Util.DurationCalculator;
+import animatefx.animation.FadeIn;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -16,45 +19,38 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
 public class UserDetailsController implements Initializable {
 
+    private static Users u;
     @FXML
     public Label userStatus;
     @FXML
     private VBox chosenUserCard;
-
     @FXML
-    private Label fruitNameLable;
-
+    private Label infoLabel;
     @FXML
-    private Label fruitPriceLabel;
-
+    private VBox singleUserDynamicBox;
     @FXML
     private Label userjoinedDate;
-
     @FXML
     private ImageView userimg;
-
     @FXML
     private Label usernameaftername;
-
     @FXML
     private Label userrole;
-
     @FXML
     private Label accountLife;
-
     @FXML
     private ScrollPane scroll;
-
     @FXML
     private GridPane grid;
-
-    private List<Users> users = new ArrayList<>();
+    private Parent fxml;
+    private final List<Users> users = new ArrayList<>();
     private Image image;
     private MyListener myListener;
     private DurationCalculator dc;
@@ -64,16 +60,16 @@ public class UserDetailsController implements Initializable {
         return users;
     }
 
-    private void setChosenUser(Users user) {
 
-        fruitNameLable.setText(user.getName());
-        fruitPriceLabel.setText(user.getRole());
+    private void setChosenUser(Users user) {
+        new FadeIn(chosenUserCard).play();
+        infoLabel.setText("Mail: " + user.getEmail() + "\n" + "Total Logins: 85 \n Last Seen: Yesterday\n Sorry am stupid");
         image = new Image("Images/" + user.getProfilePicture());
         userimg.setImage(image);
-        usernameaftername.setText(user.getName() + "-" + user.getAfterName());
+        usernameaftername.setText(user.getName() + "-" + user.getAfterName().toUpperCase());
         userrole.setText(user.getRole());
         Date date = new Date((user.getJoinDate()).getTime());
-        int[] duration = dc.DurationCalculator(user.getJoinDate());
+        int[] duration = DurationCalculator.DurationCalculator(user.getJoinDate());
         userjoinedDate.setText("Registered " + date);
         accountLife.setText("Joined " + duration[0] + " Months," + duration[1] + " Days," + duration[2] + " Hours ago.");
         String bgcolor;
@@ -126,6 +122,8 @@ public class UserDetailsController implements Initializable {
             myListener = new MyListener() {
                 @Override
                 public void onClickListener(Users user) {
+                    u = user;
+                    System.out.println("yup");
                     setChosenUser(user);
                 }
             };
@@ -139,7 +137,7 @@ public class UserDetailsController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
                 SingleUserController userController = fxmlLoader.getController();
                 userController.setData(users.get(i), myListener);
-                if (column ==4) {
+                if (column == 4) {
                     column = 0;
                     row++;
                 }
@@ -161,4 +159,19 @@ public class UserDetailsController implements Initializable {
         }
     }
 
+    public void contactShow(ActionEvent actionEvent) {
+        try {
+            fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Views/Interface_Admin_Contact.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        singleUserDynamicBox.getChildren().removeAll();
+        singleUserDynamicBox.getChildren().setAll(fxml);
+    }
+
+    public void activityShow(ActionEvent actionEvent) {
+    }
+
+    public void banShow(ActionEvent actionEvent) {
+    }
 }

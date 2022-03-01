@@ -23,7 +23,7 @@ public class Main extends Application {
         pStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("../Views/UserDetails.fxml"));
         primaryStage.setTitle("Login");
-        Scene scene = new Scene(root, 1315, 810);
+        Scene scene = new Scene(root, 1315, 800);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);

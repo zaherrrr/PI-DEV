@@ -8,10 +8,9 @@ import javafx.scene.chart.PieChart;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class UserService {
+public class UserServices {
 
     private static final String VALIDATE_LOGIN = "SELECT COUNT(*) AS COUNT FROM UTILISATEUR WHERE EMAIL =? and PASSWORD=? LIMIT 1";
     private static final String VALIDATE_EMAIL = "SELECT id from utilisateur where email=?";
@@ -22,9 +21,39 @@ public class UserService {
     private static final String STATUS_ST_QUERY = "select roles, count(*) from utilisateur group by roles ";
     private static final String DELETE_USER = "delete from utilisateur where id = ?";
     private static final String UPDATE_USER = "UPDATE UTILISATEUR SET NAME = ? ,AFTERNAME=? , EMAIL = ? ,PASSWORD = ?, ROLES = ? , PROFILEPICTURE = ?  where id= ?   ";
-
+    private static final String ACCOUNT_STATUS = "SELECT count(*) from userbans ub inner join utilisateur us where ub.id_user = ? limit 1 ";
 
     public boolean validateLogin(String email, String password) {
+        try {
+            int Login = 0;
+            Connection cnx = DataSource.getInstance().getCnx();
+            ResultSet rs;
+            PreparedStatement preparedStmt = cnx.prepareStatement(VALIDATE_LOGIN);
+            preparedStmt.setString(1, email);
+            preparedStmt.setString(2, password);
+            rs = preparedStmt.executeQuery();
+            while (rs.next()) {
+                Login = rs.getInt("COUNT");
+            }
+            rs.close();
+            System.out.println("Result set Closed.");
+            preparedStmt.close();
+            System.out.println("Prepared Statement closed.");
+
+            if (Login > 0) {
+                System.out.println("User found");
+                return true;
+            } else {
+                System.out.println("User not found ");
+                return false;
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    public boolean validateStatus(String email, String password) {
         try {
             int Login = 0;
             Connection cnx = DataSource.getInstance().getCnx();

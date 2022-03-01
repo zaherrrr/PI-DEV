@@ -1,14 +1,15 @@
 package Controller;
 
 import Entity.Users;
+import Interfaces.MyListener;
 import Util.DurationCalculator;
+import animatefx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import Interfaces.MyListener;
-
+import javafx.scene.layout.AnchorPane;
 
 public class SingleUserController {
     @FXML
@@ -21,10 +22,15 @@ public class SingleUserController {
     private Label emailLabel;
 
     @FXML
+    private AnchorPane singleUserPane;
+
+    @FXML
     private ImageView img;
 
     @FXML
     private void click(MouseEvent mouseEvent) {
+        System.out.println("yay");
+        new BounceIn(singleUserPane).play();
         myListener.onClickListener(user);
     }
 

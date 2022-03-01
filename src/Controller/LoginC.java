@@ -1,7 +1,7 @@
 package Controller;
 
 import Entity.Users;
-import Services.UserService;
+import Services.UserServices;
 import Services.UserSession;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
@@ -37,6 +38,22 @@ import java.util.regex.Pattern;
 public class LoginC implements Initializable {
     private static String profilePicture = "";
     private static final String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+    public enum Status {
+        ADMIN("ROLE_ADMIN"),
+        CLIENT("ROLE_CLIENT"),
+        CHEF("ROLE_CHEF"),
+        DELIVERY("ROLE_DELIVERY");
+        private String label;
+
+        Status(String label) {
+            this.label = label;
+        }
+
+        public String toString() {
+            return label;
+        }
+
+    }
 
     @FXML
     private Label pageNamelabel;
@@ -102,7 +119,7 @@ public class LoginC implements Initializable {
     @FXML
     void signup(ActionEvent event) {
         Pattern pattern = Pattern.compile(regex);
-        UserService us = new UserService();
+        UserServices us = new UserServices();
         errorLabel1.setText("Please wait...");
         Matcher matcher = pattern.matcher(emailAdd.getText());
         if (profilePicture.equals("")) {
@@ -163,7 +180,7 @@ public class LoginC implements Initializable {
 
     @FXML
     void login() {
-        UserService us = new UserService();
+        UserServices us = new UserServices();
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(lineEditEmail.getText());
         if (lineEditEmail.getText().length() < 1) {
