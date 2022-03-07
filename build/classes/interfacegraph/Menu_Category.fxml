@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacegraph.Menu_CategoryController">
+   <children>
+      <Button layoutX="382.0" layoutY="134.0" mnemonicParsing="false" onAction="#Inserer_Category" prefHeight="41.0" prefWidth="138.0" text="Inserer Category" />
+      <Button layoutX="79.0" layoutY="134.0" mnemonicParsing="false" onAction="#Afficher_Category" prefHeight="41.0" prefWidth="138.0" text="Afficher Category" />
+      <Button layoutX="79.0" layoutY="257.0" mnemonicParsing="false" onAction="#Modifier_Category" prefHeight="41.0" prefWidth="138.0" text="Modifier Category" />
+      <Button layoutX="382.0" layoutY="257.0" mnemonicParsing="false" onAction="#Supprimer_Category" prefHeight="41.0" prefWidth="138.0" text="Supprimer Category" />
+      <Button layoutX="217.0" layoutY="41.0" mnemonicParsing="false" onAction="#Chercher_Category" prefHeight="41.0" prefWidth="138.0" text="Chercher Category" />
+   </children>
+</AnchorPane>

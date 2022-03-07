@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacegraph.Menu_UpdateController">
+   <children>
+      <TableView fx:id="Table" layoutX="14.0" layoutY="67.0" prefHeight="267.0" prefWidth="420.0">
+        <columns>
+          <TableColumn fx:id="ID" prefWidth="92.0" text="ID" />
+          <TableColumn fx:id="Name" prefWidth="149.0" text="Name" />
+            <TableColumn fx:id="Descrip" prefWidth="175.0" text="Description" />
+        </columns>
+      </TableView>
+      <TextField fx:id="Tfname" layoutX="172.0" layoutY="10.0" />
+      <Label layoutX="33.0" layoutY="14.0" text="Rechercher Par Name" />
+      <Button layoutX="343.0" layoutY="10.0" mnemonicParsing="false" onAction="#Search" text="Search" />
+      <Button fx:id="delete" layoutX="438.0" layoutY="10.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacegraph.Menu_InsererController">
+   <children>
+      <TextField fx:id="tfName" layoutX="310.0" layoutY="117.0" />
+      <TextField fx:id="tfDescription" layoutX="310.0" layoutY="220.0" />
+      <Label layoutX="88.0" layoutY="121.0" text="Name" />
+      <Label layoutX="88.0" layoutY="224.0" text="Description" />
+      <Button layoutX="242.0" layoutY="310.0" mnemonicParsing="false" onAction="#Valider_Insert" text="Valider" />
+   </children>
+</AnchorPane>
