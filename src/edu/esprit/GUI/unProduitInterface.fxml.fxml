@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="back_p" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#click" prefHeight="148.0" prefWidth="136.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.Controller.PlatesInterfaceController">
+   <children>
+      <VBox layoutX="3.0" layoutY="8.0" prefHeight="142.0" prefWidth="135.0">
+         <children>
+            <ImageView fx:id="img_p" fitHeight="98.0" fitWidth="154.0" onMouseClicked="#click" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/sushi.jpg" />
+               </image>
+            </ImageView>
+            <HBox alignment="TOP_CENTER" prefHeight="44.0" prefWidth="121.0" style="-fx-background-color: ORANGE;">
+               <children>
+                  <Text fx:id="name_p" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="47.115662574768066">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="price_p" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="47.115662574768066">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="qnt_p" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="40.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

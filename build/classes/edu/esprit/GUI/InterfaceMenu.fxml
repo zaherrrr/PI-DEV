@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="700" prefWidth="1300" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.Controller.InterfaceMenuController">
+    <children>
+      <AnchorPane fx:id="interfacePlats" prefHeight="624.0" prefWidth="990.0" visible="false" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <ScrollPane fx:id="scroll" prefHeight="624.0" prefWidth="970.0">
+               <content>
+                  <GridPane fx:id="grid">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="interfacePaniers" visible="false" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <ScrollPane fx:id="scroll1" layoutX="165.0" prefHeight="624.0" prefWidth="841.0" AnchorPane.leftAnchor="165.0">
+               <content>
+                  <GridPane fx:id="grid1">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </ScrollPane>
+            <Button fx:id="btnValider" alignment="CENTER" layoutX="18.0" layoutY="260.0" mnemonicParsing="false" onAction="#validerPanier" prefHeight="126.0" prefWidth="126.0" stylesheets="@style.css" text="Valider Panier" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="862.0">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="menu-button" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Text fx:id="panierLabel" fill="#ff0000b9" layoutX="18.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="126.0">
+               <font>
+                  <Font name="Impact" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="704.0" prefWidth="309.0" style="-fx-background-color: #332927;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1000.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="92.0" layoutY="76.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Downloads/274236576_2147624555402969_1233608955324745367_n.jpg" />
+                     </image>
+                  </ImageView>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #e88f3c; -fx-border-color: #e88f3c;">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <VBox alignment="CENTER" prefHeight="191.0" prefWidth="300.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#afficherPlats" prefHeight="25.0" prefWidth="239.0" styleClass="menu-button" stylesheets="@style.css" text="Plats">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#afficherPanier" prefHeight="25.0" prefWidth="239.0" styleClass="menu-button" stylesheets="@style.css" text="Panier">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#afficherCommandes" prefHeight="25.0" prefWidth="239.0" styleClass="menu-button" stylesheets="@style.css" text="Commandes">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="77.0" prefWidth="300.0" />
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="304.0" prefHeight="77.0" prefWidth="300.0">
+                     <children>
+                        <VBox fx:id="vboxElement" alignment="CENTER" prefHeight="374.0" prefWidth="300.0" visible="false">
+                           <children>
+                              <AnchorPane id="AnchorPane" fx:id="anchorElement" prefHeight="0.0" prefWidth="300.0">
+                                 <children>
+                                    <VBox fx:id="vboxPlatmenu" alignment="TOP_CENTER" prefHeight="324.0" prefWidth="298.0" visible="false">
+                                       <children>
+                                          <ImageView fx:id="ImageProduit" fitHeight="150.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/pasta.jpg" />
+                                             </image>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="PromotionProduit" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="79.0" style="-fx-background-color: lightgrey;" text="Hors stock" textFill="WHITE" VBox.vgrow="NEVER">
+                                             <VBox.margin>
+                                                <Insets left="162.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox alignment="CENTER" prefHeight="90.0" prefWidth="228.0">
+                                             <children>
+                                                <Label fx:id="NomProduit" alignment="CENTER" prefWidth="95.0" text="Pasta" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                   <font>
+                                                      <Font name="Comic Sans MS Bold Italic" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="PrixProduit" ellipsisString=".." lineSpacing="10.0" prefWidth="95.0" text="18 DT" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Comic Sans MS Bold Italic" size="13.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets left="20.0" />
+                                                   </padding>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="60.0" prefWidth="228.0" spacing="2.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#decrementerQuantite" text="-" />
+                                                <TextField fx:id="quantiteField" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="49.0" text="1" />
+                                                <Button mnemonicParsing="false" onAction="#incrementerQuantite" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <Text fx:id="totalLignePanier" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="???????????">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox alignment="CENTER" prefHeight="60.0" prefWidth="133.0" spacing="2.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#ajouterPanier" prefHeight="23.0" prefWidth="177.0" text="Ajouter au panier ">
+                                                   <font>
+                                                      <Font name="Comic Sans MS Bold" size="11.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="vboxCommandes" alignment="TOP_CENTER" prefHeight="324.0" prefWidth="298.0" visible="false">
+                                       <children>
+                                          <ImageView fx:id="ImageProduit1" fitHeight="150.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/pasta.jpg" />
+                                             </image>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="PromotionProduit1" contentDisplay="CENTER" prefHeight="17.0" prefWidth="65.0" style="-fx-background-color: lightgrey;" text="   Status" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="NEVER">
+                                             <VBox.margin>
+                                                <Insets left="162.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox alignment="CENTER" prefHeight="90.0" prefWidth="228.0">
+                                             <children>
+                                                <Label fx:id="NomProduit1" alignment="CENTER" prefWidth="95.0" text="Pasta" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                   <font>
+                                                      <Font name="Comic Sans MS Bold Italic" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="PrixProduit1" ellipsisString=".." lineSpacing="10.0" prefWidth="95.0" text="18 DT" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Comic Sans MS Bold Italic" size="13.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets left="20.0" />
+                                                   </padding>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="60.0" prefWidth="228.0" spacing="2.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#decrementerQuantite" text="-" />
+                                                <TextField fx:id="quantiteField1" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="49.0" text="1" />
+                                                <Button mnemonicParsing="false" onAction="#incrementerQuantite" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <HBox alignment="CENTER" prefHeight="60.0" prefWidth="133.0" spacing="2.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#ajouterPanier" prefHeight="23.0" prefWidth="177.0" text="Ajouter au panier ">
+                                                   <font>
+                                                      <Font name="Comic Sans MS Bold" size="11.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  
+               </children>
+               
+            </VBox>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="464.0" prefHeight="67.0" prefWidth="1010.0" AnchorPane.bottomAnchor="659.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
