@@ -1,0 +1,27 @@
+{% extends "base/base_FRONT.html.twig" %}
+
+
+
+
+{% block textbanner %}
+{%if nonE == false %}
+    <h1>Votre Reservation</h1>
+
+    {{ include('Reservation_event/Reservation_form.html.twig') }}
+
+{% else %}
+    <h1>Auncun evenement de prévu pour l'instant .</h1>
+
+{% endif %}
+{% endblock %}
+
+
+{% block all %}
+
+
+
+{% endblock %}
+
+
+
+{% block ads %}    {% endblock %}

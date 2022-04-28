@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    <h1 align = "center">Liste des evenements</h1>
+    
+    <meta charset="UTF-8">
+        
+    <style type='text/css'>
+    .table
+    {
+        border-collapse: collapse;
+        align: center;
+        font-size : 0.9em;
+        min-width : 400px;
+        border-radius : 5px 5px 0 0;
+        overflow : hidden;
+        font-family : cursive;
+        align: center;
+        
+       
+    }
+    .table thead tr
+    {
+        background-color : #3737e2;
+        color : #ffffff;
+        text-align : left;
+        font-weight:bold; 
+    }
+    .table th,
+    .table td
+    {
+        font-weight:bold; 
+        padding : 16px 15px;
+        
+    }
+    .table thead:before, .table thead:after { display: none; } tbody:before, tbody:after { display: none; }
+    .table tbody tr
+    {
+        border-bottom : 1px solid #dddddd;
+    }
+     .table tbody tr:nth-of-type(even)
+    {
+       background-color: #f3f3f3;
+    }
+    .table tbody tr:last-of-type
+    {
+        border-bottom : 2px solid #3737e2;
+    }
+    .limiter
+    {
+        padding-top:100px;
+        
+    }
+    
+    h1
+    {
+        
+background: radial-gradient(#f69d3c, #3f87a6);
+  font-family: Helvetica;
+
+
+  
+    }
+    body
+    {
+        background-color : #a8a8fd;
+    }
+    
+        @page { margin: 0px;  }
+    </style>
+    </head>
+  <body>
+  <img src="{{ '/frontoffice/img/watlogo.png'}}" width="200" alt="LOGO" style="vertical-align:bottom">
+     <div class='limiter'> 
+    <table align = 'center' class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        {% for calendar in calendars %}
+           <tr>
+                <td>{{ calendar.id }}</td>
+                <td>{{ calendar.Titre }}</td> 
+                <td>{{ calendar.start ? calendar.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendar.end ? calendar.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendar.Description }}</td>
+                
+                
+         </tr>       
+                
+            
+        {% else %}
+                <td colspan="10">Aucun evenement trouvée</td>
+            
+            
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </body>
+    </html>
+
+    
+    
+

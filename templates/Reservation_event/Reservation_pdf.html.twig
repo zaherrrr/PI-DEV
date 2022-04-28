@@ -1,0 +1,39 @@
+
+   
+    <h1 align = "center">Liste des reservations</h1>
+    
+
+    <table align = "center" class="table" border=2>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tel</th>
+                <th>Nombre de Reservations</th>
+                <th>Evenement</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for events_reservation in events_reservations %}
+            <tr>
+                <td>{{ events_reservation.id }}</td>
+                <td>{{ events_reservation.tel }}</td>
+                <td>{{ events_reservation.NbrReservations}}</td>
+                <td>{{ events_reservation.LesEvenements.Titre}}</td>
+            
+                
+                
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucune reservation trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+    
+
+
+

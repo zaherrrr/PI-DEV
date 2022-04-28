@@ -1,0 +1,53 @@
+{% extends "base/base_BACK.html.twig" %}
+{% block back_content %}
+
+
+{% block body %}
+
+    <h1>Liste des evenements</h1>
+    
+    {{form_start(form)}}
+     {{form_end(form)}}
+      
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calendar in calendars %}
+            <tr>
+                <td>{{ calendar.id }}</td>
+                <td>{{ calendar.Titre }}</td> 
+                <td>{{ calendar.start ? calendar.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendar.end ? calendar.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendar.Description }}</td>
+                
+                
+                <td>
+                    <a href="{{ path('detail_event', {'id': calendar.id}) }}">Detail</a>
+                    <a href="{{ path('edit_event', {'id': calendar.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Aucun evenement trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href = "{{path('new_event')}}">Nouveau evenement</a>
+    <div>{{ knp_pagination_render(calendars) }}</div>
+    <br>
+    
+    <a href="{{ path('pdf_event')}}">Telecharger le tableau sous format pdf</a>
+{% endblock %}
+{% endblock %}
+{% block back_footer %}
+{% endblock %}

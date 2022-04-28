@@ -1,0 +1,38 @@
+{% extends "base/base_BACK.html.twig" %}
+{% block back_content %}
+    {% block body %}
+    <h1>detail Reservation </h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ events_reservation.id }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ events_reservation.tel }}</td>
+            </tr>
+            
+
+
+            <tr>
+                <th>Nombre de reservation</th>
+                <td>{{ events_reservation.NbrReservations }}</td>
+            </tr>
+            <tr>
+                <th>Evenement</th>
+                <td>{{ events_reservation.LesEvenements.Titre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('show_reservation_event') }}">Retour a la liste</a>
+
+    {#<a href="{{ path('app_events_reservation_edit', {'id': events_reservation.id}) }}">edit</a>#}
+
+    {{ include('Reservation_event/Reservation_delete.html.twig') }}
+    {% endblock %}
+{% endblock %}
+{% block back_footer %}
+{% endblock %}

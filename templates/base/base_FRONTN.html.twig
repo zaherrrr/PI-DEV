@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ asset('front-office/css/style.css') }}" >
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>iFood - {% block title %}{% endblock title %}</title>
+</head>
+<body>
+<header>
+    <a  class="logo" id="home" onclick="window.scrollToX(0)" ><b>IFOOD</b></a>
+    <ul>
+        <li><a  class="navbar" id="navhome" onclick="window.scrollToX(0)" >HOME <i class="fa-solid fa-house"></i></a></li>
+        <li><a class="navbar" onclick="scrollToX(1500)">PRODUCTS</a></li>
+        <li><a class="navbar" onclick="scrollToX(3000)" href="{{path('new_reservation_event')}}" >Reserver</a></li>
+        <li><a class="navbar"  onclick="scrollToX(4500)" >CONTACT</a></li>
+        <li><a class="navbar" id="navLogin" onclick="myFunction()" >LOGIN</a></li>
+        <li><a class="navbar" >SIGNUP</a></li>
+    </ul>
+</header>
+<!---- <section class="banner"></section> --->
+
+<div class="container" >
+
+
+    <div class="banner" > </div>
+
+    <!-- Your Work Goes here --->
+    <div class="innerLogin" id ="innerLogin" >
+        <div id="myDIV">
+
+            <div class='box-login' >
+                <div class='line-wh'></div>
+
+                <h2>LOGIN</h2>
+                <div class='line-wh'></div>
+
+                <div class='fieldset-body' id='login_form'>
+                    <form>
+                        <p class='field'>
+                            <label for='user'>E-MAIL</label>
+                            <input type='text' id='user' name='user' title='Username' />
+                        </p>
+                        <p class='field'>
+                            <label for='pass'>PASSWORD</label>
+                            <input type='password' id='pass' name='pass' title='Password' />
+                        </p>
+
+                        <label class='checkbox'>
+                            <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+                        </label>
+
+                        <!-- <input type='submit' id='do_login' value='GET STARTED' title='Get Started' /> ---->
+                        <button onclick="" class='b-login' title='Login'> Login</button>
+                    </form>
+                    <button onclick="" class='b-support' title='Forgot Password?'> Forgot Password?</button>
+                    <div class='line-wh'></div>
+                    <h2>Not Member?</h2>
+                    <div class='line-wh'></div>
+                    <button onclick="" class='b-cta' title='Sign up now!'> CREATE ACCOUNT</button>
+                    <div class='line-wh'></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="divElement" >
+        {% block body %}
+
+        {% block mainDiv %}
+        <div class="divTitle" style>Main Div</div>
+        <p style="color : black;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+            book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
+            was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+            desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <br>
+        <img src="{{ asset('front-office/img/svg.svg') }}" style="width: 50px ; height: 50px;" alt=""/>
+        <div class="divElement"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+            <p>TestSoloDiv</p>
+        </div>
+        <fieldset class="fieldSet"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+            <legend class="Legends" > <h1>Our Plates</h1> </legend>
+            <div class="divElement"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+
+                {% block divElement %}
+                    {% block dynamicDiv %}
+                        <div class="inner"   data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 1
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 2
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 1
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 2
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 1
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 2
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div
+                        </div>
+                        <div class="inner"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                            Div 1
+                        </div>
+                        <div class="inner"  data-aos="flip-down"  data-aos-delay="50"  data-aos-duration="1000"
+                        >
+                            Div 2
+                        </div>
+
+                    {% endblock dynamicDiv %}
+                {% endblock divElement %}
+            </div>
+        </fieldset>
+        <fieldset class="fieldSet"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+            <legend class="Legends" >Two Div</legend>
+
+            <div class="parent"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+                {% block parent %}
+                <div class="wide"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">Left Div 1/2 {% block wide %} {% endblock wide%} </div>
+                <div class="narrow"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">Right Div 2/2 {% block narrow %} {% endblock narrow %}</div>
+                {% endblock parent %}
+            </div>
+
+        </fieldset>
+
+
+
+
+
+
+
+            <div class="divElement"  data-aos="flip-down" data-aos-delay="50"  data-aos-duration="1000">
+            <footer class="ftco-footer bg-bottom ftco-no-pt" style="background-image: url({{ asset('front-office/img/bg_3.jpg') }});">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-md pt-5">
+                            <div class="ftco-footer-widget pt-md-5 mb-4">
+                                <h2 class="ftco-heading-2">A propos</h2>
+                                <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                                    <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                    <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                    <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <div class="legal">
+                                <div class="copyright">
+                                    &copy; 2022 - 2022 <a href="https://;">iFood@esprit.tn</a>.
+                                </div>
+                            </div>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            </div>
+        {% endblock mainDiv %}
+    </div>
+    {% endblock body %}
+    <!-- Your Work End here --->
+
+    <div class="bg"></div>
+
+
+
+</div>
+
+{% block js %}
+{% endblock js %}
+    <script src="https://kit.fontawesome.com/747fd86c34.js" crossorigin="anonymous"></script>
+
+    <script>
+        function scrollToX(x){
+            window.scrollTo({
+                top: x,
+                left : 0,
+                behavior: 'smooth'
+            });
+        }
+
+    </script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("innerLogin");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            }
+            else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        var listItems = document.getElementsByClassName("navbar");
+        window.onscroll = function (e) {
+            scrollingExp(e);
+            console.log(window.scrollY); // Value of scroll Y in px
+        };
+    </script>
+    <script>
+        function scrollingExp(e){
+            var i = 0 ;
+            if (window.scrollY>=0 && window.scrollY < 1500){
+                listItems[0].classList.add("active");
+                for (i=1;i<4;i++){
+                    listItems[i].classList.remove("active");
+                }
+            }
+            else if (window.scrollY>=1500 && window.scrollY<3000){
+                listItems[0].classList.remove("active");
+                listItems[1].classList.add("active");
+                for (i=2;i<4;i++){
+                    listItems[i].classList.remove("active");
+                }
+            }
+            else if (window.scrollY>=3000 && window.scrollY<4500){
+                listItems[0].classList.remove("active");
+                listItems[1].classList.remove("active");
+                listItems[2].classList.add("active");
+                listItems[3].classList.remove("active");
+            }
+            else if (window.scrollY>=4500 ){
+                listItems[3].classList.add("active");
+                for(i=0;i<3;i++){
+                    listItems[i].classList.remove("active");}
+
+            }
+        }
+    </script>
+    <script>
+        var x = document.getElementById("innerLogin");
+        var navLogin = document.getElementById("navLogin");
+        window.addEventListener("mouseup", function(e) {
+            if (!x.contains(e.target)) {
+
+                x.style.display = "none";
+                scrollingExp(e);
+                navLogin.classList.remove("active");
+
+            }
+        })
+    </script>
+
+
+
+    <script>
+        const Root = document.querySelector(".container");
+        const BG = document.querySelector(".bg");
+
+        Root.addEventListener("mousemove",function (e) {
+            BG.style.left = `${e.clientX}px`;
+            BG.style.top = `${e.clientY}px`;
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            // Global settings:
+            disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+            startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+            initClassName: 'aos-init', // class applied after initialization
+            animatedClassName: 'aos-animate', // class applied on animation
+            useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+            disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+            debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+            throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 400, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+        });
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var listItems = document.getElementsByClassName("navbar");
+            for (var i = 0; i < listItems.length; i++) {
+                listItems[i].addEventListener('click',changeClass,false);
+            }
+        }
+        function changeClass() {
+            var listItems = document.getElementsByClassName("navbar");
+            if (this.classList.contains("active") ) {
+
+            }
+            else{
+                this.classList.add("active");
+            }
+            for (var i = 0; i < listItems.length; i++) {
+                if (listItems[i]!==this){
+                    listItems[i].classList.remove("active");
+                }
+
+            }
+
+        }
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            var x = document.getElementById("innerLogin");
+            header.classList.toggle("sticky",window.scrollY >0);
+            x.classList.toggle("sticky",window.scrollY > 0);
+        })
+    </script>
+
+
+
+</body>
+
+</html>

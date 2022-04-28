@@ -1,0 +1,16 @@
+{% extends "base/base_BACK.html.twig" %}
+
+{% block back_content %}
+
+{% block title %}Evenements{% endblock %}
+
+{% block body %}
+    <h1>Ajout d'un nouveau evenement</h1>
+
+    {{ include('event/Event_form.html.twig') }}
+
+    <a href="{{ path('show_event') }}">Retour a la liste</a>
+{% endblock %}
+{% endblock %}
+{% block back_footer %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base/base_BACK.html.twig" %}
+{% block back_content %}
+    {% block body %}
+    <h1>Liste des reservations</h1>
+    {{form_start(form)}}
+     {{form_end(form)}}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tel</th>
+                <th>Nombre de Reservations</th>
+                <th>Approbation</th>
+                <th>Evenement</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for events_reservation in events_reservations %}
+            <tr>
+                <td>{{ events_reservation.id }}</td>
+                <td>{{ events_reservation.tel }}</td>
+                <td>{{ events_reservation.NbrReservations}}</td>
+                <td>{{ events_reservation.Approbation}}</td>
+                <td>{{ events_reservation.LesEvenements.Titre}}</td>
+            
+                
+                
+                <td>
+                    <a href="{{ path('detail_reservation_event', {'id': events_reservation.id}) }}">Detail</a>
+                    <a href="{{ path('edit_reservation_event', {'id': events_reservation.id}) }}">Modifier</a>
+                     <a href="{{ path('approuvee_reservation_event', {'id': events_reservation.id}) }}">Approuvee</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucune reservation trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('new_reservation_event') }}">Nouvelle reservation</a>
+    <div>{{ knp_pagination_render(events_reservations) }}</div>
+    <br>
+    <a href="{{ path('pdf_reservation_event') }}">Telecharger le tableau sous format pdf</a>
+    
+
+{% endblock %}
+{% endblock %}
+{% block back_footer %}
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+<table >
+    <tbody >
+    <tr>
+    <th>Liste Des Evenements</th>
+    <td>{{ form_widget(form.LesEvenements) }}</td>
+    
+    </tr>
+    
+    <tr >
+        <th>Numero de Telephone</th>
+        <td>{{ form_widget(form.tel) }}</td>
+        <td>{{ form_errors(form.tel) }}</br></br></td>
+    </tr>
+    
+    <tr>
+        <th>Nombre de places a reservés</th>
+        <td>{{ form_widget(form.NbrReservations) }}</td> </br> <td>{{ form_errors(form.NbrReservations) }}</td></br></br>
+    </tr>
+    
+    
+
+    <th></th>
+    <td><button class="btn">{{ button_label|default('Validé la reservation') }}</button></td>
+
+    </tbody>
+</table>
+{{ form_end(form) }}
+
