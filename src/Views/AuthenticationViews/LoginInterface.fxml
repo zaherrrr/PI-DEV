@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="mainBox" prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AuthenticationControllers.LoginController">
+   <children>
+      <Pane prefHeight="480.0" prefWidth="480.0">
+         <children>
+            <AnchorPane layoutX="90.0" layoutY="90.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-radius: 30;" styleClass="vbox" stylesheets="@styleslogin.css" />
+            <Button layoutX="214.0" layoutY="352.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="154.0" layoutY="351.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="169.0" styleClass="blue-btn" stylesheets="@styleslogin.css" text="Recover Account" textFill="#fffa6d">
+               <font>
+                  <Font name="Swis721 WGL4 BT Bold" size="12.0" />
+               </font>
+            </Button>
+            <VBox fx:id="loginBox" alignment="TOP_CENTER" layoutX="88.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="300.0" spacing="30.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="300.0">
+                     <children>
+                        <AnchorPane prefHeight="24.0" prefWidth="100.0" style="-fx-border-color: white; -fx-background-color: black;" styleClass="title" stylesheets="@styleslogin.css">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font name="Arial Black" size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="286.0" spacing="5.0">
+                     <children>
+                        <FontAwesomeIconView fill="#eeea1f" glyphName="USER" size="16" />
+                        <TextField fx:id="lineEditEmail" prefHeight="25.0" prefWidth="169.0" promptText="Enter mail" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <FontAwesomeIconView fill="#eeea1f" glyphName="KEY" size="16" />
+                        <PasswordField fx:id="lineEditPwd" prefHeight="25.0" prefWidth="169.0" promptText="Enter Password" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="errorLabel" textAlignment="CENTER" textFill="RED">
+                     <VBox.margin>
+                        <Insets top="-20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="141.0" styleClass="blue-btn" stylesheets="@styleslogin.css" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Swis721 WGL4 BT Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Pane>
+   </children>
+</VBox>

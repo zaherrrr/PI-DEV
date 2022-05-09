@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0"  xmlns="http://javafx.com/javafx/17"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminControllers.InterfaceAdminController">
+   <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="200.0" prefWidth="435.0" styleClass="right-bar" stylesheets="@style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="311.0" text="Admin Interface" textFill="#fffa6d">
+                           <font>
+                              <Font name="Cambria Bold" size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" stylesheets="@style.css" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField prefHeight="40.0" prefWidth="235.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="#fffa6d" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="search-box" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </HBox>
+                  <Pane prefHeight="33.0" prefWidth="435.0" VBox.vgrow="ALWAYS" />
+                  <VBox fx:id="chosenUserCard" alignment="CENTER" prefHeight="535.0" prefWidth="100.0" stylesheets="@style.css" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" styleClass="shadow">
+                                 <children>
+                                    <ImageView fx:id="userimg" fitHeight="139.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" styleClass="chosen-user-photo" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox alignment="CENTER" prefHeight="139.0" prefWidth="200.0" spacing="1.0" styleClass="shadow" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="19.0" prefWidth="171.0" spacing="5.0">
+                                 <children>
+                                    <Circle fill="WHITE" radius="9.0" stroke="WHITE" strokeType="INSIDE" />
+                                    <Label fx:id="usernameaftername" alignment="CENTER" prefHeight="17.0" prefWidth="170.0" text="wow fronted is awesome !" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="userStatus" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" style="-fx-border-color: white;" text="Validated" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="25.0" right="25.0" top="5.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="USER" />
+                                 </graphic>
+                              </Label>
+                              <Label prefHeight="17.0" prefWidth="229.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="4.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="userrole" alignment="CENTER" prefHeight="17.0" prefWidth="169.0" text="Role" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" />
+                                 </graphic>
+                              </Label>
+                              <Label fx:id="userjoinedDate" alignment="CENTER" prefHeight="17.0" prefWidth="179.0" text="Joined Monday 12 " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                              </Label>
+                              <Line disable="true" endX="43.29289245605469" fill="WHITE" startX="-100.0" stroke="WHITE" strokeType="OUTSIDE">
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </Line>
+                              <Label fx:id="accountLife" alignment="CENTER" prefHeight="46.0" prefWidth="171.0" text="JOINED A" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR" size="9" textAlignment="CENTER" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleUserDynamicBox">
+                           <children>
+                              <HBox alignment="CENTER" cacheShape="false" prefWidth="335.0" scaleShape="false" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="28.0" prefWidth="0.0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="45.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="-20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <VBox alignment="CENTER" prefHeight="68.0" prefWidth="311.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="33.0" prefWidth="235.0">
+                                             <children>
+                                                <Separator prefWidth="200.0">
+                                                   <padding>
+                                                      <Insets right="5.0" />
+                                                   </padding>
+                                                </Separator>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra Information" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="11.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Text>
+                                                <Separator layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+                                                   <padding>
+                                                      <Insets left="5.0" />
+                                                   </padding>
+                                                </Separator>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="infoLabel" alignment="CENTER" prefHeight="117.0" prefWidth="300.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                   <font>
+                                                      <Font name="Cambria Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="311.0">
+                                                   <children>
+                                                      <Separator prefWidth="200.0" />
+                                                      <FontAwesomeIconView fill="WHITE" glyphName="INFO">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </FontAwesomeIconView>
+                                                      <Separator layoutX="10.0" layoutY="10.0" prefWidth="200.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                    <Label alignment="CENTER" prefHeight="28.0" prefWidth="0.0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="45.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" right="-20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#contactShow" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@style.css" text="CONTACT " textFill="#828282">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                                       <children>
+                                          <Separator prefHeight="0.0" prefWidth="118.0" />
+                                          <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="or" textFill="WHITE">
+                                             <font>
+                                                <Font name="Cambria" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Separator prefHeight="0.0" prefWidth="118.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#activityShow" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@style.css" text="CHECK ACTIVITY" textFill="#828282">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                                       <children>
+                                          <Separator prefHeight="0.0" prefWidth="118.0" />
+                                          <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="or" textFill="WHITE">
+                                             <font>
+                                                <Font name="Cambria" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Separator prefHeight="0.0" prefWidth="118.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Button alignment="CENTER" mnemonicParsing="false" onAction="#banShow" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@style.css" text="BAN" textFill="#828282">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="chosen-fruit-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </VBox>
+                  <Pane prefHeight="57.0" prefWidth="435.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="29.0" prefWidth="88.0" text="language" textFill="#878787">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="29.0" prefWidth="77.0" text="English" textFill="#878787" underline="true">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="62.0" prefWidth="100.0" text="My Account" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="84.0" prefWidth="96.0" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="380.0" styleClass="free-delivery-card" stylesheets="@style.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="214.0">
+                                 <children>
+                                    <Label prefHeight="29.0" prefWidth="190.0" text="Free delivery" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="16.0" prefWidth="190.0" text="over $20 order" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="84.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" styleClass="shopping-online-card" stylesheets="@style.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="203.0">
+                                 <children>
+                                    <Label prefHeight="29.0" prefWidth="190.0" text="Shopping online" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="20.0" prefWidth="207.0" text="get your shopping in same day" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="84.0" prefWidth="96.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="785.0" styleClass="transparent" stylesheets="@style.css">
+                           <content>
+                              <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets bottom="35.0" top="15.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
