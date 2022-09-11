@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="categoryBackground" prefHeight="136.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientControllers.SingleCategory">
+   <children>
+      <VBox fx:id="categoryBox" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#click" onMouseEntered="#hoverCategory" onMouseExited="#unhoverCategory" prefHeight="123.0" prefWidth="400.0" style="-fx-background-color: gray; -fx-background-radius: 40; -fx-border-color: gray; -fx-border-width: 5; -fx-border-radius: 30;" styleClass="shadow" stylesheets="@style.css">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="300.0" spacing="40.0">
+               <children>
+                  <Label fx:id="categoryNumber" alignment="CENTER" contentDisplay="CENTER" text="#1" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="-4.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text fx:id="categoryName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Category Name" underline="true">
+                     <font>
+                        <Font name="Stencil" size="22.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="1.0" />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="106.0" prefWidth="390.0">
+                     <children>
+                        <Label fx:id="description" prefHeight="14.0" prefWidth="83.0" text="Description :" textFill="WHITE" HBox.hgrow="NEVER">
+                           <font>
+                              <Font name="Stencil" size="11.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" startX="99.99952697753906" startY="45.29289245605469" strokeWidth="0.0" />
+                        <VBox alignment="CENTER" prefHeight="10.0" prefWidth="222.0" HBox.hgrow="NEVER">
+                           <children>
+                              <Text fx:id="categoryDeescription" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph " textAlignment="CENTER" wrappingWidth="266.13671875">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="15.0" prefWidth="400.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="18.0" prefWidth="123.0">
+                           <children>
+                              <Label fx:id="nbrText" text="Number of Plates" textFill="WHITE">
+                                 <font>
+                                    <Font name="Stencil" size="9.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="numberOfPaltes" text="15" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Pane prefHeight="76.0" prefWidth="118.0" />
+                        <VBox alignment="CENTER" layoutX="150.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="nbrPlatesSold" text="Plates Sold" textFill="WHITE">
+                                 <font>
+                                    <Font name="Stencil" size="9.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="numberOfPlatesSold" text="100" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

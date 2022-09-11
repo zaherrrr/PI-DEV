@@ -1,0 +1,55 @@
+ .parent{
+     -fx-background-color: transparent;
+ }
+ .pane{
+    -fx-background-color: #ffffff;
+     -fx-background-radius: 30;
+
+ }
+
+ .trans-btn-white-border{
+     -fx-background-color: transparent;
+     -fx-background-radius: 5px;
+     -fx-border-color: #cccccc;
+     -fx-border-radius: 5px;
+     -fx-border-width: 1px;
+     -fx-text-fill: whitesmoke;
+ }
+ .white-pane{
+     -fx-background-color: #ffffff;
+
+
+
+ }
+ .blue-panel{
+     -fx-background-color: #151928;
+     -fx-background-radius: 60;
+     -fx-border-radius: 60;
+ } .blue-btn{
+     -fx-background-color: #151928;
+     -fx-background-radius: 60;
+     -fx-border-radius: 60;
+     -fx-border-color : black;
+ }
+ .tf_box{
+     -fx-background-color: transparent;
+     -fx-border-color: #DEDEE4;
+     -fx-border-width: 0px 0px 1px 0px;
+ }
+.vbox{
+     -fx-background-color: #151928;
+     -fx-opacity: 0.2;
+     -fx-border-radius:40;
+  }
+  .title {
+
+    -fx-border-width: 0 0 0 5;
+    }
+ .tf{
+     -fx-background-color: transparent;
+ }
+ .blue-btn2{
+     -fx-background-color: #2196f3;
+     -fx-background-radius: 5px;
+     -fx-text-fill:  #ffffff;
+ }

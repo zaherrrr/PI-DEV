@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Line?>
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.ClientControllers.PlateDetails"
+            prefHeight="450.0" prefWidth="300.0">
+    <children>
+        <VBox fx:id="chosenPlate" alignment="CENTER" prefHeight="535.0" prefWidth="100.0" stylesheets="@style.css">
+            <styleClass>
+                <String fx:value="chosen-fruit-card" />
+                <String fx:value="shadow" />
+            </styleClass>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                <VBox.margin>
+                    <Insets left="10.0" top="10.0" />
+                </VBox.margin>
+                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="shadow">
+                    <ImageView fx:id="plateimg" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" styleClass="chosen-user-photo" VBox.vgrow="NEVER" />
+                </VBox>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="139.0" prefWidth="200.0" spacing="1.0" styleClass="shadow" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <HBox alignment="CENTER" prefHeight="19.0" prefWidth="171.0" spacing="5.0">
+                    <Label fx:id="platename" alignment="CENTER" prefHeight="17.0" prefWidth="170.0" text="wow fronted is awesome !" textFill="WHITE" underline="true">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                </HBox>
+                <Label fx:id="platePrice" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" style="-fx-border-color: white;" text="Validated" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets left="25.0" right="25.0" top="5.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                    <graphic>
+                        <!--<FontAwesomeIconView fill="WHITE" glyphName="DOLLAR"/> -->
+                    </graphic>
+                </Label>
+                <Label prefHeight="17.0" prefWidth="229.0">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <font>
+                        <Font size="4.0" />
+                    </font>
+                </Label>
+                <Text fx:id="infoLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Textdvdfgdfgdfgdf dfgd fgd fgd fjkghdfkjgh dfjgk hdfkjgh djkfhgd jkfh gfh gjkdfh gjkdfh hdfjkgh djkfhg dfkg dfg" textAlignment="CENTER" wrappingWidth="221.13671875">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Text>
+                <Label fx:id="plateQuantity" alignment="CENTER" prefHeight="17.0" prefWidth="179.0" text="Quantity : 200" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="8.0" />
+                    </font>
+                </Label>
+                <Line disable="true" endX="43.29289245605469" fill="WHITE" startX="-100.0" stroke="WHITE" strokeType="OUTSIDE">
+                    <VBox.margin>
+                        <Insets left="15.0" />
+                    </VBox.margin>
+                </Line>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="68.0" prefWidth="311.0">
+                <HBox alignment="CENTER" prefHeight="33.0" prefWidth="235.0">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <Separator prefWidth="200.0">
+                        <padding>
+                            <Insets right="5.0" />
+                        </padding>
+                    </Separator>
+                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="  Category  " textAlignment="CENTER">
+                        <font>
+                            <Font name="System Bold Italic" size="11.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </Text>
+                    <Separator layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+                        <padding>
+                            <Insets left="5.0" />
+                        </padding>
+                    </Separator>
+                </HBox>
+                <VBox alignment="CENTER" prefHeight="34.0" prefWidth="335.0">
+                    <Label fx:id="platecat" alignment="TOP_CENTER" prefHeight="12.0" prefWidth="297.0" text="Description" textFill="WHITE" wrapText="true" VBox.vgrow="NEVER">
+                        <font>
+                            <Font name="Cambria Bold" size="9.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                    </Label>
+                    <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="311.0" />
+                </VBox>
+            </VBox>
+            <VBox fx:id="singleUserDynamicBox" alignment="CENTER" prefHeight="353.0" prefWidth="335.0">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+                <padding>
+                    <Insets top="5.0" />
+                </padding>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#closePlateInfo" prefHeight="25.0" prefWidth="182.0" styleClass="add-btn" text="Close">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </children>
+</VBox>

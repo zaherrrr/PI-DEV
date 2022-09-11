@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?> -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="buttonDynamicBox" alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientControllers.PlateMenuButtonsController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="228.0" spacing="2.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#decrementerQuantite" prefHeight="35.0" prefWidth="36.0" styleClass="add-btn" stylesheets="@style.css" text="-">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <TextField fx:id="quantiteField" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: white;" styleClass="chosen-user-photo" stylesheets="@style.css" text="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+            <Button mnemonicParsing="false" onAction="#incrementerQuantite" styleClass="add-btn" stylesheets="@../AdminViews/style.css" text="+">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <Text fx:id="totalLignePanier" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+            <Label alignment="CENTER" prefHeight="45.0" prefWidth="110.0" text=" Shop " textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="24.0" />
+               </font>
+            </Label>
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="btnAddtoCart" alignment="CENTER" mnemonicParsing="false" onAction="#addToCart" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@../AdminViews/style.css" text="Add to Cart" textFill="#828282">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                <!--  <FontAwesomeIconView fill="#f16c31" glyphName="SHOPPING_CART" size="30" /> -->
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+            <Label alignment="CENTER" prefHeight="45.0" prefWidth="75.0" text="Rate" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="24.0" />
+               </font>
+            </Label>
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0" stylesheets="@style.css" HBox.hgrow="NEVER">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-effect: dropshadow: (three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0)(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Button" />
+                  <Button mnemonicParsing="false" style="-fx-effect: dropshadow: (three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Button" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-effect: dropshadow: (three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Button" />
+                  <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" style="-fx-effect: dropshadow: (three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Button" />
+                  <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" style="-fx-effect: dropshadow: (three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Button" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+            <Separator prefHeight="0.0" prefWidth="118.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" />
+   </children>
+</VBox>
